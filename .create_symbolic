@@ -1,8 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 
 UTILITYS="repo  repo_google  xxcleandavid  xxfree  xxlistfile  xxproduct  xxsyncbuild ducati.sh"
 
 for TOOL in ${UTILITYS}
 do
-	ln -s ${PWD}/${TOOL} ~/bin/${TOOL}
+	echo -e "${PWD}/${TOOL} -> ~/bin/${TOOL}"
+	ln -sf ${PWD}/${TOOL} ~/bin/${TOOL}
 done
