@@ -1,0 +1,13 @@
+#!/bin/sh
+
+while true
+do
+	clear;
+	echo "========== Memory =========="
+	free
+	echo
+	echo "==========  Disk  =========="
+	df -lh
+	echo
+	sleep 1
+done

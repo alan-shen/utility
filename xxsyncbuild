@@ -1,0 +1,73 @@
+#!/bin/bash
+
+GREEN_PRE="\033[32;49;1m"
+GREEN_END="\033[39;49;0m"
+RED_PRE="\033[31;49;1m"
+RED_END="\033[31;49;0m"
+BLUE_PRE="\033[34;49;1m"
+BLUE_END="\033[34;49;0m"
+APPLE_PRE="\033[36;49;1m"
+APPLE_END="\033[36;49;0m"
+
+WORK_PATH="/home/b645/gerrit/x86"
+PRODUCT_LIST="devr4t2 devr4t3 devr4t4 devr4t5"
+
+PWD=`pwd`
+clear
+for product in $PRODUCT_LIST
+do
+	cd $WORK_PATH/$product
+	echo -e "${GREEN_PRE}.......... ${product} ..........${GREEN_END}\n"
+	repo branch
+	echo
+done
+cd ${pwd}
+sleep 3
+
+for product in $PRODUCT_LIST
+do
+	echo -e "${GREEN_PRE}=======================================================================================${GREEN_END}"
+	echo -e "                  ${APPLE_PRE}CODE_LINE${APPLE_END} : ${RED_PRE} $product ${RED_END}"
+	echo -e "${GREEN_PRE}++++++++++++++++++++++++++++++++++++++${GREEN_END}"
+	echo -e "\n"
+	min=1
+	max=3
+	while [ $min -le $max ]
+	do
+		min=`expr $min + 1`
+		cd $WORK_PATH/$product
+		BUILD_START=`date`
+		repo sync -j4
+		if [ $? -eq 0 ]
+		then
+			echo -e "${RED_PRE}Sync OK! ${RED_END}"
+			source build/envsetup.sh
+			lunch 19
+			make redhookbay -j4
+			BUILD_END=`date`
+			echo -e "${GREEN_PRE}----------------------------------------------${GREEN_END}"
+			echo -e "# START@ ${RED_PRE} ${BUILD_START} ${RED_END}"
+			echo -e "#   END@ ${RED_PRE} ${BUILD_END} ${RED_END}"
+			echo -e "${GREEN_PRE}----------------------------------------------${GREEN_END}"
+			break
+		fi
+	done
+	echo -e "\n\n\n\n\n"
+done
+
+set -x
+sendmail -t <<EOF
+	From: Shen Pengru <pengru.shen@borqs.com>
+	To:   shenpengru@gmail.com
+	Cc:   pengru.shen@borqs.com
+	Subject: Daily Build of b645
+
+	---------------------------------------------
+	Build complete now!
+	Build Time: ${BUILD_END}
+	---------------------------------------------
+EOF
+set +x
+
+
+

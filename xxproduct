@@ -1,0 +1,18 @@
+#!/bin/sh
+
+echo
+echo "                      +-------------------------------------------------------------+"
+echo "                      | CODELINE   - PRODUCT                                        |"
+echo "                      +-------------------------------------------------------------+" 
+echo "                      | devr4t2    -                         - ~/gerrit/x86/devr4t2 |"
+echo "                      | devr4t3    -   CLT10.devr4t3         - ~/gerrit/x86/devr4t3 |"
+echo "                      | devr4t4    - RAMOSI9.devr4t4         - ~/gerrit/x86/devr4t4 |"
+echo "                      | devr4t5    -  PRESTO.devr4t5         - ~/gerrit/x86/devr4t5 |"
+echo "                      | w32        -   IBP10.w32             - ~/gerrit/x86/w32     |"
+echo "                      +-------------------------------------------------------------+"
+echo "                      |       TOOL - PATH                                           |"
+echo "                      +-------------------------------------------------------------+" 
+echo "                      |      lfstk - /home/b645/work/borqs_tool/lfstk               |"
+echo "                      |    PV sign - /home/b645/work/borqs_tool/sign_intel_PV       |"
+echo "                      +-------------------------------------------------------------+"
+echo                                                                                      

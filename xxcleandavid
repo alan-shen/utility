@@ -1,0 +1,8 @@
+#!/bin/bash
+TOP=`dirname $0`
+
+echo -e "+------------------------------------------+"
+echo -e "TOP=$TOP"
+echo -e "PWD=$PWD\n\n"
+find ${PWD} -name "*.hptmp" | xargs rm -rfv
+echo -e "+------------------------------------------+"

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+while true
+do
+	clear;
+	ls --color -lht
+	sleep 1
+done
