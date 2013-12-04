@@ -1,7 +1,7 @@
 #!/bin/sh
 
-BASE_DIR=/home/b645/ibuild2/devr4tw32
-PROD_DIR=/home/b645/ibuild2/w32_ducati
+BASE_DIR=/home/b645/ibuild2/w32_ducati
+PROD_DIR=/home/b645/ibuild2/devr4tw32
 
 
 SPEC_NAME=spec_w32_DUCATI.conf
