@@ -1,0 +1,8 @@
+#!/bin/sh
+
+UTILITYS="repo  repo_google  xxcleandavid  xxfree  xxlistfile  xxproduct  xxsyncbuild ducati.sh"
+
+for TOOL in ${UTILITYS}
+do
+	ln -s ${PWD}/${TOOL} ~/bin/${TOOL}
+done
