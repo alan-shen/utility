@@ -1,6 +1,6 @@
 #!/bin/bash
 
-UTILITYS="repo  repo_google  xxcleandavid  xxfree  xxlistfile  xxproduct  xxsyncbuild ducati.sh"
+UTILITYS="repo  repo_google  xxcleandavid  xxfree  xxlistfile  xxproduct  xxsyncbuild"
 
 for TOOL in ${UTILITYS}
 do
