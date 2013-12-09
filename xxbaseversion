@@ -1,0 +1,25 @@
+#!/bin/bash
+
+PATH_IBUILD2_CONF=$HOME/ibuild2_env/devr4tw32/conf
+
+if [ -z $1 ]
+then
+	pushd $PATH_IBUILD2_CONF > /dev/null
+	LIST=`ls -l | awk -F' ' '{print $9}' | grep spec_w32_`
+	clear
+	echo -e "\n\t======================================"
+	for vlist in $LIST
+	do
+		product=`echo $vlist | awk -F'_' '{print $3}' | awk -F'.' '{print $1}'`
+		version=`cat  $vlist | grep CODEBASE_REV | awk -F'=' '{print $2}'`
+		echo -e "\tBase Version $version - $product"
+	done
+	echo -e "\t======================================\n"
+	popd > /dev/null
+else
+	PRODUCT=spec_w32_$1.conf
+	echo -e "********************\nPRODUCT=$1"
+	cat $PATH_IBUILD2_CONF/$PRODUCT | grep CODEBASE_REV | awk -F'=' '{print $2}'
+	echo -e "********************\n"
+fi
+

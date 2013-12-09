@@ -1,6 +1,6 @@
 #!/bin/bash
 
-UTILITYS="repo  repo_google  xxcleandavid  xxfree  xxlistfile  xxproduct  xxsyncbuild"
+UTILITYS="repo  repo_google  xxcleandavid  xxfree  xxlistfile  xxproduct  xxsyncbuild xxbaseversion"
 
 for TOOL in ${UTILITYS}
 do
