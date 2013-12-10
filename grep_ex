@@ -4,4 +4,4 @@ PAR_ALL=$@
 EXCLUDE=" --exclude-dir=.svn "
 
 #echo "----- grep $PAR_ALL $EXCLUDE"
-grep $PAR_ALL $EXCLUDE
+grep $PAR_ALL $EXCLUDE --color=auto
