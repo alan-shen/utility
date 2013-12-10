@@ -1,0 +1,10 @@
+#!/bin/bash
+
+PAR_ALL=$@
+WORKPATH=`echo $PAR_ALL|awk -F' ' '{print $1}'`
+PAR_SUB=${PAR_ALL#*' '}
+EXCLUDE=" -path \".svn\" -prune "
+
+#echo $PAR_SUB
+#echo "----- find $WORKPATH $EXCLUDE $PAR_SUB"
+find $WORKPATH $EXCLUDE $PAR_SUB
