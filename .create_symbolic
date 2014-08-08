@@ -4,6 +4,6 @@ UTILITYS="repo  repo_google  xxcleandavid  xxfree  xxlistfile  xxproduct  xxsync
 
 for TOOL in ${UTILITYS}
 do
-	echo -e "${PWD}/${TOOL} -> ~/bin/${TOOL}"
-	ln -sf ${PWD}/${TOOL} ~/bin/${TOOL}
+	echo -e "/work/github/utility/${TOOL} -> ~/bin/${TOOL}"
+	ln -sf /work/github/utility/${TOOL} ~/bin/${TOOL}
 done

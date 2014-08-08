@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PATH_IBUILD2_CONF=$HOME/ibuild2_env/devr4tw32/conf
+PATH_IBUILD2_CONF=$HOME/ibuild2/devr4tw32/conf
 
 if [ -z $1 ]
 then

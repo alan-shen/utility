@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PAR_ALL=$@
-EXCLUDE=" --exclude-dir=.svn "
+EXCLUDE=" --exclude-dir=.svn --exclude=tags --exclude=cscope.out "
 
 #echo "----- grep $PAR_ALL $EXCLUDE"
 grep $PAR_ALL $EXCLUDE --color=auto
